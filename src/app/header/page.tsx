@@ -1,3 +1,6 @@
+import '../../../public/assets/css/style.css'; // global css
+
+
 export default function Header() {
   return (
     <>
