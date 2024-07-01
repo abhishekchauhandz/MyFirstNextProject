@@ -1,6 +1,6 @@
 'use client';
 import { useEffect } from 'react';
-import 'swiper/swiper-bundle.min.css';
+import '../../../public/assets/vendor/swiper/swiper-bundle.min.css';
 import '../../../public/assets/css/style.css';
 
 const Screenshots = () => {

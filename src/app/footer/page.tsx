@@ -9,7 +9,7 @@ export default function Footer () {
           <div className='footer-logo'>
 
             <a className='navbar-brand' href='#'>eStartup</a>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the.</p>
 
           </div>
         </div>
