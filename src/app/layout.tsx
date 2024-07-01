@@ -1,13 +1,15 @@
+import Script from "next/script";
+import Header from "./header/page";
+import Footer from "./footer/page";
+import BackToTop from "./backToTop/page";
+
 import "../../public/assets/css/style.css"; // global css
 import "../../public/assets/vendor/bootstrap/css/bootstrap.min.css";
 import "../../public/assets/vendor/bootstrap-icons/bootstrap-icons.css";
 import "../../public/assets/vendor/glightbox/css/glightbox.min.css";
 import "../../public/assets/vendor/swiper/swiper-bundle.min.css";
-// import "../../public/assets/vendor/aos/aos.css"; // import AOS CSS
+import "../../public/assets/vendor/aos/aos.css"; // import AOS CSS
 
-import Header from "./header/page";
-import Footer from "./footer/page";
-import BackToTop from "./backToTop/page";
 
 export const metadata = {
   title: 'Next.js',
@@ -25,12 +27,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <BackToTop />
         <Footer />
-        <script src="assets/js/main.js"></script>
-        <script src="assets/vendor/aos/aos.js"></script>
-        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-        <script src="assets/vendor/php-email-form/validate.js"></script>
+        <Script src="assets/js/main.js"></Script>
+        <Script src="assets/vendor/aos/aos.js"></Script>
+        <Script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></Script>
+        <Script src="assets/vendor/glightbox/js/glightbox.min.js"></Script>
+        <Script src="assets/vendor/swiper/swiper-bundle.min.js"></Script>
+        <Script src="assets/vendor/php-email-form/validate.js"></Script>
       </body>
     </html>
   )

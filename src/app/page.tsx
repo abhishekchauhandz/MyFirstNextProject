@@ -1,3 +1,7 @@
+"use client"
+import { useEffect } from "react";
+import aos from "../../public/assets/vendor/aos/aos"
+
 import Pricing from "./pricing/page";
 import About from "./about/page";
 import Features from "./features/page";
@@ -12,6 +16,9 @@ import NewsLetter from "./newsLetter/page";
 import Contact from "./contact/page";
 
 export default function Home () {
+    useEffect (() => {
+        aos.init();
+    },[])
     return (
         <>
          <HeroSection />
