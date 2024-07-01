@@ -5,7 +5,7 @@ export default function Header() {
         <div className='container d-flex align-items-center justify-content-between'>
 
           <div id='logo'>
-            <h1><a href='index.html'><span>e</span>Startup</a></h1>
+            <h1><a href='index.html'><span>Flair</span>Cast</a></h1>
           </div>
 
           <nav id='navbar' className='navbar'>
