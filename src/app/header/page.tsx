@@ -1,4 +1,6 @@
-import '../../../public/assets/css/style.css'; // global css
+'use client'
+
+import '../../../public/assets/css/style.css' 
 
 
 export default function Header() {
