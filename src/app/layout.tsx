@@ -1,9 +1,6 @@
 import Script from 'next/script';
-import Header from './header/page';
-import Footer from './footer/page';
-import BackToTop from './backToTop/page';
 
-import '../../public/assets/css/style.css'; // global css
+import "../../public/assets/css/style.css"; // global css
 import '../../public/assets/vendor/bootstrap/css/bootstrap.min.css';
 import '../../public/assets/vendor/bootstrap-icons/bootstrap-icons.css';
 import '../../public/assets/vendor/glightbox/css/glightbox.min.css';
@@ -23,15 +20,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i' rel='stylesheet' />
       </head>
       <body>
-        <Header />
+        
         {children}
-        <Footer />
-        <BackToTop />
+        
         <Script src="assets/vendor/aos/aos.js" />
         <Script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" />
         <Script src="assets/vendor/glightbox/js/glightbox.min.js" />
         <Script src="assets/vendor/swiper/swiper-bundle.min.js" />
-        <Script src="assets/vendor/php-email-form/validate.js" />
+        {/* <Script src="assets/vendor/php-email-form/validate.js" /> */}
 
         <Script src="assets/js/main.js" />
       </body>

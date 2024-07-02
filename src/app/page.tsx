@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import aos from '../../public/assets/vendor/aos/aos'
 
+import Header from './header/page';
 import Pricing from './pricing/page';
 import About from './about/page';
 import Features from './features/page';
@@ -14,6 +15,9 @@ import VideoSection from './video/page';
 import Blog from './blog/page';
 import NewsLetter from './newsLetter/page';
 import Contact from './contact/page';
+import Footer from './footer/page';
+import BackToTop from './backToTop/page';
+
 
 export default function Home () {
     useEffect (() => {
@@ -21,6 +25,7 @@ export default function Home () {
     },[])
     return (
         <>
+         <Header />
          <HeroSection />
          <GetStarted />
          <About />
@@ -33,6 +38,8 @@ export default function Home () {
          <Blog />
          <NewsLetter />
          <Contact />
+         <Footer />
+         <BackToTop />
         </>
     )
 }
