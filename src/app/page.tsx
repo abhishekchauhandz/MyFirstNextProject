@@ -1,6 +1,7 @@
 'use client'
 import { useEffect } from 'react';
 import aos from '../../public/assets/vendor/aos/aos'
+import "../../public/assets/css/style.css"
 import Link from 'next/link';
 
 import Header from './header/page';
