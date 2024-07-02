@@ -25,14 +25,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Header />
         {children}
-        <BackToTop />
         <Footer />
-        <Script src='assets/js/main.js'></Script>
-        <Script src='assets/vendor/aos/aos.js'></Script>
-        <Script src='assets/vendor/bootstrap/js/bootstrap.bundle.min.js'></Script>
-        <Script src='assets/vendor/glightbox/js/glightbox.min.js'></Script>
-        <Script src='assets/vendor/swiper/swiper-bundle.min.js'></Script>
-        <Script src='assets/vendor/php-email-form/validate.js'></Script>
+        <BackToTop />
+        <Script src="assets/vendor/aos/aos.js" />
+        <Script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" />
+        <Script src="assets/vendor/glightbox/js/glightbox.min.js" />
+        <Script src="assets/vendor/swiper/swiper-bundle.min.js" />
+        <Script src="assets/vendor/php-email-form/validate.js" />
+
+        <Script src="assets/js/main.js" />
       </body>
     </html>
   )
