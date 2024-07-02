@@ -1,6 +1,6 @@
 import Script from 'next/script';
 
-import "../../public/assets/css/style.css"; // global css
+import '../../public/assets/css/style.css'; // global css
 import '../../public/assets/vendor/bootstrap/css/bootstrap.min.css';
 import '../../public/assets/vendor/bootstrap-icons/bootstrap-icons.css';
 import '../../public/assets/vendor/glightbox/css/glightbox.min.css';
@@ -23,13 +23,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         
         {children}
         
+        <Script src="assets/js/main.js" strategy="beforeInteractive" />
         <Script src="assets/vendor/aos/aos.js" />
         <Script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" />
         <Script src="assets/vendor/glightbox/js/glightbox.min.js" />
         <Script src="assets/vendor/swiper/swiper-bundle.min.js" />
-        {/* <Script src="assets/vendor/php-email-form/validate.js" /> */}
-
-        <Script src="assets/js/main.js" />
       </body>
     </html>
   )

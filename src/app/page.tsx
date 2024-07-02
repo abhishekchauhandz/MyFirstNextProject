@@ -1,6 +1,7 @@
 'use client'
 import { useEffect } from 'react';
 import aos from '../../public/assets/vendor/aos/aos'
+import Link from 'next/link';
 
 import Header from './header/page';
 import Pricing from './pricing/page';
@@ -16,7 +17,6 @@ import Blog from './blog/page';
 import NewsLetter from './newsLetter/page';
 import Contact from './contact/page';
 import Footer from './footer/page';
-import BackToTop from './backToTop/page';
 
 
 export default function Home () {
@@ -39,7 +39,9 @@ export default function Home () {
          <NewsLetter />
          <Contact />
          <Footer />
-         <BackToTop />
+         <Link href='#' id='back-to-top' className='back-to-top d-flex align-items-center justify-content-center'>
+            <i className='bi bi-arrow-up-short'></i>
+         </Link>
         </>
     )
 }
