@@ -1,5 +1,5 @@
-"use client"
-import "../../../public/assets/css/style.css"
+
+
 
 export default function Header() {
   return (
