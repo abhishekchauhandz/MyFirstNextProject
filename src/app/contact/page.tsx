@@ -10,6 +10,7 @@ async function addDataToFireStore (name: string, email: string, subject: string,
       email: email,
       subject: subject,
       message: message,
+      timestamp: new Date()
     });
     console.log("Document written with ID: ", docRef.id)
     return true;
@@ -33,7 +34,7 @@ export default function Contact() {
       setEmail("");
       setMessage("");
       setSubject("");
-
+    
       alert("Data added to firestore DB!!")
     }
   };
