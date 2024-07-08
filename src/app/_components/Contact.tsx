@@ -1,9 +1,9 @@
 'use client'
-import { db } from "../../../firebaseConfig"
-import { collection, addDoc } from "firebase/firestore";
-import React, {useState} from "react"
+import { db } from "../firebaseConfig";
+import { addDoc, collection } from "firebase/firestore";
+import React, { useState } from "react";
 
-async function addDataToFireStore (name: string, email: string, subject: string, message: string) {
+async function addDataToFireStore(name: string, email: string, subject: string, message: string) {
   try {
     const docRef = await addDoc(collection(db, "contact"), {
       name: name,
@@ -28,13 +28,13 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const added = await addDataToFireStore(name, email, subject,message);
+    const added = await addDataToFireStore(name, email, subject, message);
     if (added) {
       setName("");
       setEmail("");
       setMessage("");
       setSubject("");
-    
+
       alert("Data added to firestore DB!!")
     }
   };
@@ -91,50 +91,50 @@ export default function Contact() {
             <div className='form'>
               <form className='php-email-form' onSubmit={handleSubmit}>
                 <div className='form-group'>
-                  <input 
-                     type='text' 
-                     name='name' 
-                     value={name} 
-                     onChange={e => {setName(e.target.value)}} 
-                     className='form-control' 
-                     id='name' 
-                     placeholder='Your Name' 
-                     required 
+                  <input
+                    type='text'
+                    name='name'
+                    value={name}
+                    onChange={e => { setName(e.target.value) }}
+                    className='form-control'
+                    id='name'
+                    placeholder='Your Name'
+                    required
                   />
                 </div>
                 <div className='form-group mt-3'>
-                  <input 
-                    type='email' 
-                    className='form-control' 
-                    name='email' 
+                  <input
+                    type='email'
+                    className='form-control'
+                    name='email'
                     id='email'
                     value={email}
-                    onChange={e => {setEmail(e.target.value)}} 
-                    placeholder='Your Email' 
-                    required 
+                    onChange={e => { setEmail(e.target.value) }}
+                    placeholder='Your Email'
+                    required
                   />
                 </div>
                 <div className='form-group mt-3'>
-                  <input 
-                    type='text' 
-                    className='form-control' 
-                    name='subject' 
+                  <input
+                    type='text'
+                    className='form-control'
+                    name='subject'
                     value={subject}
-                    onChange={e => {setSubject(e.target.value)}}
-                    id='subject' 
-                    placeholder='Subject' 
-                    required 
+                    onChange={e => { setSubject(e.target.value) }}
+                    id='subject'
+                    placeholder='Subject'
+                    required
                   />
                 </div>
                 <div className='form-group mt-3'>
-                  <textarea 
-                    className='form-control' 
+                  <textarea
+                    className='form-control'
                     name='message'
                     id='message'
                     value={message}
-                    onChange={e => {setMessage(e.target.value)}} 
-                    rows={5} 
-                    placeholder='Message' 
+                    onChange={e => { setMessage(e.target.value) }}
+                    rows={5}
+                    placeholder='Message'
                     required>
                   </textarea>
                 </div>

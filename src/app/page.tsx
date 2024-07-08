@@ -3,20 +3,20 @@ import { useEffect } from 'react';
 import aos from '../../public/assets/vendor/aos/aos'
 import Link from 'next/link';
 
-import Header from './header/page';
-import Pricing from './pricing/page';
-import About from './about/page';
-import Features from './features/page';
-import GetStarted from './getStarted/page';
-import HeroSection from './heroSection/page';
-import Screenshot from './screenshot/page';
-import TeamSection from './team/page';
-import Testimonials from './testimonials/page';
-import VideoSection from './video/page';
-import Blog from './blog/page';
-import NewsLetter from './newsLetter/page';
-import Contact from './contact/page';
-import Footer from './footer/page';
+import Header from './_components/Header';
+import Pricing from './_components/Pricing';
+import About from './_components/About';
+import Features from './_components/Features';
+import GetStarted from './_components/GetStarted';
+import HeroSection from './_components/Hero';
+import Screenshot from './_components/Screenshot';
+import TeamSection from './_components/Team';
+import Testimonials from './_components/Testimonials';
+import VideoSection from './_components/Video';
+import Blog from './_components/Blog';
+import NewsLetter from './_components/NewsLetter';
+import Contact from './_components/Contact';
+import Footer from './_components/Footer';
 
 
 export default function Home () {

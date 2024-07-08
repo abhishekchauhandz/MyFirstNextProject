@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "firebase:init": "firebase init functions",
+    "firebase:deploy": "firebase deploy --only functions"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
