@@ -1,10 +1,3 @@
-/**
-* Template Name: eStartup
-* Template URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
-* Updated: Mar 17 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 (function() {
   "use strict";
@@ -45,22 +38,22 @@
   /**
    * Navbar links active state on scroll
    */
-  let navbarlinks = select('#navbar .scrollto', true)
-  const navbarlinksActive = () => {
-    let position = window.scrollY + 200
-    navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return
-      let section = select(navbarlink.hash)
-      if (!section) return
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        navbarlink.classList.add('active')
-      } else {
-        navbarlink.classList.remove('active')
-      }
-    })
-  }
-  window.addEventListener('load', navbarlinksActive)
-  onscroll(document, navbarlinksActive)
+  // let navbarlinks = select('#navbar .scrollto', true)
+  // const navbarlinksActive = () => {
+  //   let position = window.scrollY + 200
+  //   navbarlinks.forEach(navbarlink => {
+  //     if (!navbarlink.hash) return
+  //     let section = select(navbarlink.hash)
+  //     if (!section) return
+  //     if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+  //       navbarlink.classList.add('active')
+  //     } else {
+  //       navbarlink.classList.remove('active')
+  //     }
+  //   })
+  // }
+  // window.addEventListener('load', navbarlinksActive)
+  // onscroll(document, navbarlinksActive)
 
   /**
    * Scrolls to an element with header offset
@@ -101,7 +94,8 @@
    */
   let backtotop = select('.back-to-top')
   if (backtotop) {
-    const toggleBacktotop = () => {
+    const toggleBacktotop = (e) => {
+      e.preventDefault();
       if (window.scrollY > 100) {
         backtotop.classList.add('active')
       } else {
@@ -115,21 +109,21 @@
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
+  // on('click', '.mobile-nav-toggle', function(e) {
+  //   select('#navbar').classList.toggle('navbar-mobile')
+  //   this.classList.toggle('bi-list')
+  //   this.classList.toggle('bi-x')
+  // })
 
-  /**
-   * Mobile nav dropdowns activate
-   */
-  on('click', '.navbar .dropdown > a', function(e) {
-    if (select('#navbar').classList.contains('navbar-mobile')) {
-      e.preventDefault()
-      this.nextElementSibling.classList.toggle('dropdown-active')
-    }
-  }, true)
+  // /**
+  //  * Mobile nav dropdowns activate
+  //  */
+  // on('click', '.navbar .dropdown > a', function(e) {
+  //   if (select('#navbar').classList.contains('navbar-mobile')) {
+  //     e.preventDefault()
+  //     this.nextElementSibling.classList.toggle('dropdown-active')
+  //   }
+  // }, true)
 
   /**
    * Scrool with ofset on links with a class name .scrollto
@@ -163,25 +157,58 @@
   /**
    * Clients Slider
    */
-  
+  // new Swiper('.screens-slider', {
+  //   speed: 400,
+  //   loop: true,
+  //   autoplay: {
+  //     delay: 5000,
+  //     disableOnInteraction: false
+  //   },
+  //   slidesPerView: 'auto',
+  //   pagination: {
+  //     el: '.swiper-pagination',
+  //     type: 'bullets',
+  //     clickable: true
+  //   },
+  //   breakpoints: {
+  //     320: {
+  //       slidesPerView: 1,
+  //       spaceBetween: 20
+  //     },
+  //     575: {
+  //       slidesPerView: 2,
+  //       spaceBetween: 20
+  //     },
+  //     640: {
+  //       slidesPerView: 3,
+  //       spaceBetween: 20
+  //     },
+  //     992: {
+  //       slidesPerView: 4,
+  //       spaceBetween: 20
+  //     }
+  //   }
+  // });
 
   /**
    * Initiate  glightbox 
    */
-  // const glightbox = GLightbox({
-  //   selector: '.glightbox'
-  // });
+  // if (typeof GLightbox !== "undefined"){
+  //   const glightbox = GLightbox({
+  //     selector: '.glightbox'
+  //   });
+  // }
 
   /**
    * Animation on scroll
    */
-  // window.addEventListener('load', () => {
-  //   AOS.init({
-  //     duration: 1000,
-  //     easing: 'ease-in-out',
-  //     once: true,
-  //     mirror: false
-  //   })
-  // });
+  window.addEventListener('load', () => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    })
+  });
 
 })()

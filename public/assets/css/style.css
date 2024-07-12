@@ -1,15 +1,3 @@
-/**
-* Template Name: eStartup
-* Template URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
-* Updated: Mar 17 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
-
 body {
   background-color: #fff;
   color: #333;
@@ -400,7 +388,7 @@ span {
   color: #71c55d;
 }
 
-.navbar-mobile .dropdown .dropdown-active {
+.navbar-mobile .dropdown>.dropdown-active {
   display: block;
 }
 
@@ -535,7 +523,7 @@ section {
 
 .padd-section {
   padding-bottom: 80px;
-  padding-top: 40px;
+  padding-top: 100px;
 }
 
 @media (max-width: 992px) {

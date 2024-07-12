@@ -1,6 +1,8 @@
+// app/page.tsx
 'use client'
+
 import { useEffect } from 'react';
-import aos from '../../public/assets/vendor/aos/aos'
+import aos from '../../public/assets/vendor/aos/aos';
 import Link from 'next/link';
 
 import Header from './_components/Header';
@@ -17,31 +19,32 @@ import Blog from './_components/Blog';
 import NewsLetter from './_components/NewsLetter';
 import Contact from './_components/Contact';
 import Footer from './_components/Footer';
-
+import { AuthProvider } from '@/app/context/AuthContext';
 
 export default function Home () {
-    useEffect (() => {
-        aos.init();
-    },[])
-    return (
-        <>
-         <Header />
-         <HeroSection />
-         <GetStarted />
-         <About />
-         <Features />
-         <Screenshot />
-         <VideoSection />
-         <TeamSection />
-         <Testimonials />
-         <Pricing />
-         <Blog />
-         <NewsLetter />
-         <Contact />
-         <Footer />
-         <Link href='#' id='back-to-top' className='back-to-top d-flex align-items-center justify-content-center'>
-            <i className='bi bi-arrow-up-short'></i>
-         </Link>
-        </>
-    )
+  useEffect (() => {
+    aos.init();
+  }, []);
+  
+  return (
+    <>
+    <AuthProvider>
+      <Header />
+      <HeroSection />
+      <GetStarted />
+      <About />
+      <Features />
+      <Screenshot />
+      <VideoSection />
+      <TeamSection />
+      <Testimonials />
+      <Pricing />
+      <Blog />
+      <NewsLetter />
+      <Contact />
+      <Footer />
+    </AuthProvider>
+    <Link href="#" className="back-to-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short"></i></Link>
+    </>
+  );
 }
