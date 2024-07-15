@@ -1,43 +1,54 @@
 'use client'
-import { db } from "../firebaseConfig";
-import { addDoc, collection } from "firebase/firestore";
+
 import React, { useState } from "react";
 
-async function addDataToFireStore(name: string, email: string, subject: string, message: string) {
-  try {
-    const docRef = await addDoc(collection(db, "contact"), {
-      name: name,
-      email: email,
-      subject: subject,
-      message: message,
-      timestamp: new Date()
-    });
-    console.log("Document written with ID: ", docRef.id)
-    return true;
-  } catch (error) {
-    console.error("Error adding document ", error)
-    return false;
-  }
-}
-
 export default function Contact() {
-  const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [subject, setSubject] = useState<string>("");
-  const [message, setMessage] = useState<string>("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [formStatus, setFormStatus] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const added = await addDataToFireStore(name, email, subject, message);
-    if (added) {
-      setName("");
-      setEmail("");
-      setMessage("");
-      setSubject("");
+    setFormStatus("Submitting");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      alert("Data added to firestore DB!!")
+      if (res.ok) {
+        setFormStatus("Submitted");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+        console.log(formData);
+      } else {
+        setFormStatus("Error");
+      }
+    } catch (error) {
+      setFormStatus("Error");
     }
   };
+
   return (
     <section id='contact' className='padd-section'>
       <div className='container' data-aos='fade-up'>
@@ -94,8 +105,8 @@ export default function Contact() {
                   <input
                     type='text'
                     name='name'
-                    value={name}
-                    onChange={e => { setName(e.target.value) }}
+                    value={formData.name}
+                    onChange={handleChange}
                     className='form-control'
                     id='name'
                     placeholder='Your Name'
@@ -108,8 +119,8 @@ export default function Contact() {
                     className='form-control'
                     name='email'
                     id='email'
-                    value={email}
-                    onChange={e => { setEmail(e.target.value) }}
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder='Your Email'
                     required
                   />
@@ -119,8 +130,8 @@ export default function Contact() {
                     type='text'
                     className='form-control'
                     name='subject'
-                    value={subject}
-                    onChange={e => { setSubject(e.target.value) }}
+                    value={formData.subject}
+                    onChange={handleChange}
                     id='subject'
                     placeholder='Subject'
                     required
@@ -131,17 +142,17 @@ export default function Contact() {
                     className='form-control'
                     name='message'
                     id='message'
-                    value={message}
-                    onChange={e => { setMessage(e.target.value) }}
+                    value={formData.message}
+                    onChange={handleChange}
                     rows={5}
                     placeholder='Message'
                     required>
                   </textarea>
                 </div>
                 <div className='my-3'>
-                  <div className='loading'>Loading</div>
-                  <div className='error-message'></div>
-                  <div className='sent-message'>Your message has been sent. Thank you!</div>
+                  {formStatus === "Submitting" && <div className='loading'>Loading</div>}
+                  {formStatus === "Error" && <div className='error-message'>Error submitting form.</div>}
+                  {formStatus === "Submitted" && <div className='sent-message'>Your message has been sent. Thank you!</div>}
                 </div>
                 <div className='text-center'>
                   <button type='submit'>Send Message</button>

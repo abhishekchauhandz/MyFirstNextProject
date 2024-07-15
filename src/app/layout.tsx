@@ -6,6 +6,7 @@ import '../../public/assets/vendor/bootstrap-icons/bootstrap-icons.css';
 import '../../public/assets/vendor/glightbox/css/glightbox.min.css';
 import '../../public/assets/vendor/swiper/swiper-bundle.min.css';
 import '../../public/assets/vendor/aos/aos.css'; // import AOS CSS
+import { AuthProvider } from './context/AuthContext';
 
 
 
@@ -30,14 +31,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i' rel='stylesheet' />
       </head>
       <body>
-        
+        <AuthProvider>
+            
         {children}
+
+        </AuthProvider>
         
-        <Script src="assets/js/main.js" />
-        <Script src="assets/vendor/aos/aos.js" />
-        <Script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" />
-        <Script src="assets/vendor/glightbox/js/glightbox.min.js" />
-        <Script src="assets/vendor/swiper/swiper-bundle.min.js" />
+        
+        <Script src="/main.js" strategy="beforeInteractive"/>
+        <Script src="assets/vendor/aos/aos.js" strategy='lazyOnload'/>
+        <Script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" strategy='lazyOnload'/>
+        <Script src="assets/vendor/swiper/swiper-bundle.min.js" strategy='lazyOnload'/>
       </body>
     </html>
   )

@@ -20,7 +20,7 @@ export default function GetStarted() {
                             <div className='feature-block'>
 
                                 <img src='assets/img/svg/cloud.svg' alt='img'/>
-                                    <h4>introducing whatsapp</h4>
+                                    <h4>Promote new Sevices</h4>
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
                                     <a href='#'>read more</a>
 
@@ -31,7 +31,7 @@ export default function GetStarted() {
                             <div className='feature-block'>
 
                                 <img src='assets/img/svg/planet.svg' alt='img'/>
-                                    <h4>user friendly interface</h4>
+                                    <h4>Message customers in real time</h4>
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
                                     <a href='#'>read more</a>
 
@@ -42,7 +42,7 @@ export default function GetStarted() {
                             <div className='feature-block'>
 
                                 <img src='assets/img/svg/asteroid.svg' alt='img'/>
-                                    <h4>build the app everyone love</h4>
+                                    <h4>Brand your Business</h4>
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
                                     <a href='#'>read more</a>
 
