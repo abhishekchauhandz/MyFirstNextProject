@@ -1,17 +1,13 @@
 // src/app/api/contact/route.ts
-import { NextApiRequest, NextApiResponse } from "next";
-import { db } from "@/app/firebaseConfig";
-import { collection, addDoc } from "firebase/firestore";
-import { transporter } from "@/app/utils/mailSender.utils";
+import { NextResponse } from 'next/server';
+import { db } from '@/app/firebaseConfig';
+import { collection, addDoc } from 'firebase/firestore';
+import { transporter } from '@/app/utils/mailSender.utils';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Method Not Allowed' });
-    }
+export async function POST(req: Request) {
+    const { name, email, subject, message } = await req.json();
 
     try {
-        const { name, email, subject, message } = req.body;
-
         const docRef = await addDoc(collection(db, 'contacts'), {
             name,
             email,
@@ -35,12 +31,12 @@ Sincerely,
 The Flaircast team`
         });
 
-        res.status(200).json({
+        return NextResponse.json({
             id: docRef.id,
             message: "Message sent successfully!!!"
         });
     } catch (error) {
         console.error("Error adding document: ", error);
-        res.status(500).json({ error: "Failed to send message" });
+        return NextResponse.json({ error: "Failed to send message" }, { status: 500 });
     }
 }
