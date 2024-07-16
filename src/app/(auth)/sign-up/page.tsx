@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { createUserWithEmailAndPassword, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { auth, db } from '@/app/firebaseConfig';
 import { doc, setDoc } from 'firebase/firestore';
 import { useRouter } from 'next/navigation';
@@ -42,6 +42,23 @@ const SignUp: React.FC = () => {
     }
   };
 
+  const handleGoogleSignIn = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      await setDoc(doc(db, 'users', user.uid), {
+        firstName: user.displayName?.split(' ')[0] || '',
+        lastName: user.displayName?.split(' ')[1] || '',
+        email: user.email,
+      });
+      router.push('/');
+    } catch (error) {
+      console.error('Error signing in with Google:', error);
+      alert('Google sign-in failed');
+    }
+  };
+
   return (
     <>
       <Link href="/">
@@ -73,6 +90,14 @@ const SignUp: React.FC = () => {
               <button type="submit" className="btn btn-primary btn-block">{loading ? "Signing up.." : "Sign Up"}</button>
             </div>
           </form>
+          <div className="text-center my-3">
+            <span>or</span>
+          </div>
+          <div className="form-group d-flex justify-content-center">
+            <button onClick={handleGoogleSignIn} className="btn btn-danger btn-block">
+              <i className="fab fa-google mr-3 fa-lg"></i> Sign in with Google
+            </button>
+          </div>
           <div className="text-center mt-3">
             <span>Already have an account? </span>
             <Link href="/login">

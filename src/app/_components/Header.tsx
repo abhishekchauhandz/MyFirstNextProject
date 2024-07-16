@@ -24,7 +24,7 @@ export default function Header() {
             <li><a className='nav-link scrollto' href='#contact'>Contact</a></li>
             {user ? (
               <>
-                <li><span style={{ marginLeft: "3rem", fontWeight: "500" }}>Welcome, {userName || 'User'}</span></li>
+                <li><span>Welcome, {userName || 'User'}</span></li>
                 <li><button onClick={logout} className="btn btn-primary px-4 py-2" style={{ fontSize: "0.7rem", backgroundColor: "#71c55d", marginLeft: "30px" }}>Logout</button></li>
               </>
             ) : (

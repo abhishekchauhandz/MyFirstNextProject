@@ -40,7 +40,6 @@ export default function Contact() {
           subject: "",
           message: "",
         });
-        console.log(formData);
       } else {
         setFormStatus("Error");
       }
@@ -150,12 +149,15 @@ export default function Contact() {
                   </textarea>
                 </div>
                 <div className='my-3'>
-                  {formStatus === "Submitting" && <div className='loading'>Loading</div>}
-                  {formStatus === "Error" && <div className='error-message'>Error submitting form.</div>}
-                  {formStatus === "Submitted" && <div className='sent-message'>Your message has been sent. Thank you!</div>}
+                  
                 </div>
                 <div className='text-center'>
-                  <button type='submit'>Send Message</button>
+                  <button type='submit'>
+                    {formStatus === "Submitting" ? "Sending Message..." : "Send Message"}
+                    {formStatus === "Submitting" && <div className='loading'>Loading</div>}
+                  {formStatus === "Error" && <div className='error-message'>Error submitting form.</div>}
+                  {formStatus === "Submitted" && <div className='sent-message'>Your message has been sent. Thank you!</div>}
+                  </button>
                 </div>
               </form>
             </div>
