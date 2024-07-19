@@ -38,10 +38,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </AuthProvider>
         
+        <Script src="assets/js/main.js" />
         <Script src="assets/vendor/aos/aos.js" />
         <Script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" />
         <Script src="assets/vendor/swiper/swiper-bundle.min.js" />
-        <Script src="assets/js/main.js" />
       </body>
     </html>
   );
