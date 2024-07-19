@@ -1,9 +1,50 @@
 'use client'
-import React from 'react';
+import React,{useEffect} from 'react';
 import Link from 'next/link';
 import { useAuth } from '@/app/context/AuthContext';
 
 const Header: React.FC =() => {
+
+  useEffect(() => {
+    const select = (selector: string, all = false): HTMLElement | HTMLElement[] | null => 
+      all ? Array.from(document.querySelectorAll(selector)) as HTMLElement[] : document.querySelector(selector) as HTMLElement;
+
+    const mobileNavToggleBtn = select(".mobile-nav-toggle") as HTMLElement;
+    if (mobileNavToggleBtn) {
+      mobileNavToggleBtn.addEventListener("click", () => {
+        const navbar = select("#navbar") as HTMLElement;
+        if (navbar) {
+          navbar.classList.toggle("navbar-mobile");
+        }
+        mobileNavToggleBtn.classList.toggle("bi-list");
+        mobileNavToggleBtn.classList.toggle("bi-x");
+      });
+    }
+
+    let navbarlinks = select('#navbar .scrollto', true) as HTMLElement[];
+    const navbarlinksActive = () => {
+      let position = window.scrollY + 200;
+      navbarlinks.forEach(navbarlink => {
+        const anchor = navbarlink as HTMLAnchorElement;
+        if (!anchor.hash) return;
+        const section = document.querySelector(anchor.hash) as HTMLElement;
+        if (!section) return;
+        if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+          anchor.classList.add('active');
+        } else {
+          anchor.classList.remove('active');
+        }
+      });
+    };
+
+    window.addEventListener('load', navbarlinksActive);
+    window.addEventListener('scroll', navbarlinksActive);
+
+    return () => {
+      window.removeEventListener('load', navbarlinksActive);
+      window.removeEventListener('scroll', navbarlinksActive);
+    };
+  }, []);
 
   const { user, userName, logout } = useAuth()
 
@@ -19,22 +60,19 @@ const Header: React.FC =() => {
             <li><a className='nav-link scrollto' href='#about-us'>About</a></li>
             <li><a className='nav-link scrollto' href='#features'>Features</a></li>
             <li><a className='nav-link scrollto' href='#screenshots'>Screenshots</a></li>
-            <li><a className='nav-link scrollto' href='#team'>Team</a></li>
             <li><a className='nav-link scrollto' href='#pricing'>Pricing</a></li>
             <li><a className='nav-link scrollto' href='#contact'>Contact</a></li>
             {user ? (
                             <>
                                 <li className="dropdown"><a href="#"><span>Welcome, {userName || 'Abhishek'}</span> <i className="bi bi-chevron-down"></i></a>
                                     <ul>
-                                        <li><a href="/dashboard">Go to dashboard</a></li>
-                                        <li><a style={{cursor: 'pointer'}} onClick={logout}>Logout</a></li>
+                                        <li><Link href="/dashboard">Go to dashboard</Link></li>
+                                        <li><button onClick={logout} className="btn btn-primary px-4 py-2" style={{ fontSize: "0.7rem", backgroundColor: "#71c55d", marginLeft: "30px" }}>Logout</button></li>
                                     </ul>
                                 </li>
                             </>
                         ) : (
                             <>
-                                <li><a className="nav-link scrollto" href="/admin">Login</a></li>
-
                             </>
                         )}
           </ul>
