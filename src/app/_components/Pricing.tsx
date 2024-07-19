@@ -11,7 +11,7 @@ export default function Pricing() {
 
                 <div className='row' data-aos='fade-up' data-aos-delay='100'>
 
-                    <div className='col-md-6 col-lg-3'>
+                    {/* <div className='col-md-6 col-lg-3'>
                         <div className='block-pricing'>
                             <div className='pricing-table'>
                                 <h4>basic</h4>
@@ -28,9 +28,9 @@ export default function Pricing() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
-                    <div className='col-md-6 col-lg-3'>
+                    {/* <div className='col-md-6 col-lg-3'>
                         <div className='block-pricing'>
                             <div className='pricing-table'>
                                 <h4>PERSONAL</h4>
@@ -47,8 +47,8 @@ export default function Pricing() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-
+                    </div> */}
+{/* 
                     <div className='col-md-6 col-lg-3'>
                         <div className='block-pricing'>
                             <div className='pricing-table'>
@@ -66,15 +66,15 @@ export default function Pricing() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className='col-md-6 col-lg-3'>
                         <div className='block-pricing'>
                             <div className='pricing-table'>
-                                <h4>profeesional</h4>
-                                <h2>$29</h2>
+                                <h4>Upfront Costs</h4>
+                                {/* <h2>$29</h2> */}
                                 <ul className='list-unstyled'>
-                                    <li><b>4 GB</b> Ram</li>
+                                    <li><b>Startup Kit + Phone Install Support + 1st</b> Ram</li>
                                     <li><b>7/24</b> Tech Support</li>
                                     <li><b>40 GB</b> SSD Cloud Storage</li>
                                     <li>Monthly Backups</li>

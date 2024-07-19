@@ -410,7 +410,7 @@ span {
 #hero {
   width: 100%;
   height: calc(100vh - 40px);
-  background: url(../img/hero-bg.png) center bottom no-repeat;
+  background: url(/assets/img/hero-bg.png) center bottom no-repeat;
   background-size: 100%;
   position: relative;
   margin-top: 80px;
@@ -767,8 +767,8 @@ section {
 --------------------------------*/
 .img-fluid {
   max-width: 100%;
-  max-height: 500px; /* Adjust the height as needed */
-  object-fit: contain;
+  height: 400px; /* Adjust the height as needed */
+  /* object-fit: contain; */
 }
 
 #screenshots .swiper-pagination {
@@ -797,7 +797,7 @@ section {
 /* Video Section
 --------------------------------*/
 #video {
-  background: url(../img/video-bg.jpg) center center;
+  background: url(/assets/img/video-bg.jpg) center center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 400px;
@@ -1159,7 +1159,7 @@ section {
 /* Newsletter Section
 --------------------------------*/
 #newsletter {
-  background: rgba(0, 0, 0, 0) url(../img/newsletter-bg.jpg) no-repeat center top fixed;
+  background: rgba(0, 0, 0, 0) url(/assets/img/newsletter-bg.jpg) no-repeat center top fixed;
   background-size: cover;
 }
 

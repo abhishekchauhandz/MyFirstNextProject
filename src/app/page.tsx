@@ -11,7 +11,6 @@ import Features from './_components/Features';
 import GetStarted from './_components/GetStarted';
 import HeroSection from './_components/Hero';
 import Screenshot from './_components/Screenshot';
-import TeamSection from './_components/Team';
 import Testimonials from './_components/Testimonials';
 import Blog from './_components/Blog';
 import NewsLetter from './_components/NewsLetter';
@@ -34,7 +33,6 @@ export default function Home () {
       <About />
       <Features />
       <Screenshot />
-      <TeamSection />
       <Testimonials />
       <Pricing />
       <Blog />

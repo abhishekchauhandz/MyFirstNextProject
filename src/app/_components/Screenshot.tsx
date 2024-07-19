@@ -1,7 +1,6 @@
 'use client';
 import { useEffect } from 'react';
 import '../../../public/assets/vendor/swiper/swiper-bundle.min.css';
-import '../../../public/assets/css/style.css';
 
 const Screenshots = () => {
   useEffect(() => {
@@ -49,8 +48,8 @@ const Screenshots = () => {
       <section id='screenshots' className='padd-section text-center'>
         <div className='container' data-aos='fade-up'>
           <div className='section-title text-center'>
-            <h2>App Gallery</h2>
-            <p className='separator'>Integer cursus bibendum augue ac cursus.</p>
+            <h2>Gallery</h2>
+            {/* <p className='separator'>Integer cursus bibendum augue ac cursus.</p> */}
           </div>
 
           <div className='screens-slider swiper'>
@@ -74,10 +73,10 @@ const Screenshots = () => {
                 <img src='/assets/img/screen/6.jpg' className='img-fluid' alt='' />
               </div>
               <div className='swiper-slide'>
-                <img src='/assets/img/screen/7.jpg' className='img-fluid' alt='' />
+                <img src='/assets/img/screen/1.jpg' className='img-fluid' alt='' />
               </div>
               <div className='swiper-slide'>
-                <img src='/assets/img/screen/8.jpg' className='img-fluid' alt='' />
+                <img src='/assets/img/screen/2.jpg' className='img-fluid' alt='' />
               </div>
             </div>
             <div className='swiper-pagination'></div>

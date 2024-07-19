@@ -1,10 +1,10 @@
 'use client'
-
+import React from 'react';
 import Link from 'next/link';
 import { useAuth } from '@/app/context/AuthContext';
-import "../../../public/assets/css/style.css";
 
-export default function Header() {
+const Header: React.FC =() => {
+
   const { user, userName, logout } = useAuth()
 
   return (
@@ -23,16 +23,20 @@ export default function Header() {
             <li><a className='nav-link scrollto' href='#pricing'>Pricing</a></li>
             <li><a className='nav-link scrollto' href='#contact'>Contact</a></li>
             {user ? (
-              <>
-                <li><span>Welcome, {userName || 'User'}</span></li>
-                <li><button onClick={logout} className="btn btn-primary px-4 py-2" style={{ fontSize: "0.7rem", backgroundColor: "#71c55d", marginLeft: "30px" }}>Logout</button></li>
-              </>
-            ) : (
-              <>
-                <li><Link href='/login'><button className="btn btn-primary px-4 py-2" style={{ fontSize: "0.7rem", backgroundColor: "#71c55d" }}>Login</button></Link></li>
-                <li><Link href='/sign-up'><button className="btn btn-primary px-4 py-2" style={{ fontSize: "0.7rem", backgroundColor: "#71c55d" }}>Sign Up</button></Link></li>
-              </>
-            )}
+                            <>
+                                <li className="dropdown"><a href="#"><span>Welcome, {userName || 'Abhishek'}</span> <i className="bi bi-chevron-down"></i></a>
+                                    <ul>
+                                        <li><a href="/dashboard">Go to dashboard</a></li>
+                                        <li><a style={{cursor: 'pointer'}} onClick={logout}>Logout</a></li>
+                                    </ul>
+                                </li>
+                            </>
+                        ) : (
+                            <>
+                                <li><a className="nav-link scrollto" href="/admin">Login</a></li>
+
+                            </>
+                        )}
           </ul>
           <i className="bi bi-list mobile-nav-toggle"></i>
         </nav>
@@ -40,3 +44,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default Header;

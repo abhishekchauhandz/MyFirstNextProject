@@ -15,10 +15,9 @@ export default function Testimonials() {
                                         <div className='carousel-item  active'>
                                             <div className='top-top'>
 
-                                                <h2>Our Users Speack volumes us</h2>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                                                    specimen book. It has survived not only five centuries.</p>
-                                                <h4>Kimberly Tran<span>manager</span></h4>
+                                                {/* <h2>Our Users Speak volumes us</h2> */}
+                                                <p>"I can educate my patients about the practice and new health trends, keep my TV content, and use scrolling text to communicate in real-time. You can't beat this convenience."</p>
+                                                <h4>-Comprehensive Pain Management,<span>Atlanta,GA</span></h4>
 
                                             </div>
                                         </div>
@@ -26,10 +25,9 @@ export default function Testimonials() {
                                         <div className='carousel-item '>
                                             <div className='top-top'>
 
-                                                <h2>Our Users Speack volumes us</h2>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                                                    specimen book. It has survived not only five centuries.</p>
-                                                <h4>Henderson<span>manager</span></h4>
+                                                {/* <h2>Our Users Speak volumes us</h2> */}
+                                                <p>"I was a bit shocked how FAST the thing worked. We started to sell services in an HOUR we had not sold shows.Plus, it saves us money on printer posters.Love it!"</p>
+                                                <h4>-Top Line Jag Repair,<span>Washington D.C.</span></h4>
 
                                             </div>
                                         </div>
@@ -37,10 +35,27 @@ export default function Testimonials() {
                                         <div className='carousel-item '>
                                             <div className='top-top'>
 
-                                                <h2>Our Users Speack volumes us</h2>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                                                    specimen book. It has survived not only five centuries.</p>
-                                                <h4>David Spark<span>manager</span></h4>
+                                                {/* <h2>Our Users Speack volumes us</h2> */}
+                                                <p>"Works great! We have it on multiple TVs at Marshall's ports Bar and use it to promote our events and shows.Plus, it saves us money on printed posters.Loveit!"</p>
+                                                <h4>-Marshall's Sports Bar,<span>Conyers,GA</span></h4>
+
+                                            </div>
+                                        </div>
+                                        <div className='carousel-item '>
+                                            <div className='top-top'>
+
+                                                {/* <h2>Our Users Speack volumes us</h2> */}
+                                                <p>"Flaircast gives me a great way to interact with my patients while they are in the waiting room.It let's me advertise premium products and entertain my patients at the same time.I higly recommend the service to every office"</p>
+                                                <h4>-Gwinnett Place Honda,<span>Duluth,GA</span></h4>
+
+                                            </div>
+                                        </div>
+                                        <div className='carousel-item '>
+                                            <div className='top-top'>
+
+                                                {/* <h2>Our Users Speack volumes us</h2> */}
+                                                <p>"We LOVE Flaircast and happy with the capabilities, the ease of the operation and the trouble free-performance. It allow us to use our TV to broadcast live TV for our customers while customizing and controlling a portion f the TV for our messages and brand directly via the web. I would recommend it to every business that has a TV at their location. IT's a TV for BUSINESS!"</p>
+                                                <h4>-Gwinnett Place Honda,<span>Duluth,GA</span></h4>
 
                                             </div>
                                         </div>
@@ -53,6 +68,8 @@ export default function Testimonials() {
                                             <li data-bs-target='#carousel-example-generic' data-bs-slide-to='0' className='active'></li>
                                             <li data-bs-target='#carousel-example-generic' data-bs-slide-to='1'></li>
                                             <li data-bs-target='#carousel-example-generic' data-bs-slide-to='2'></li>
+                                            <li data-bs-target='#carousel-example-generic' data-bs-slide-to='3'></li>
+                                            <li data-bs-target='#carousel-example-generic' data-bs-slide-to='4'></li>
                                         </ul>
 
                                     </div>

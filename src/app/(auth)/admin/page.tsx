@@ -33,7 +33,7 @@ const Login: React.FC = () => {
       </Link>
       <div className="container-fluid bg-light vh-100 d-flex align-items-center justify-content-center">
         <div className="card p-4 shadow" style={{ width: "400px" }}>
-          <h2 className="text-center mb-4">Login</h2>
+          <h2 className="text-center mb-4">Admin Login</h2>
           <form onSubmit={handleSubmit}>
             <div className="form-group mb-3">
               <label htmlFor="inputEmail">Email address</label>
@@ -51,10 +51,7 @@ const Login: React.FC = () => {
             <Link href="/forgot-password">
               <p className="mr-3">Forgot Password?</p>
             </Link>
-            <span>or</span>
-            <Link href="/sign-up">
-              <p className="ml-3">Sign Up Here</p>
-            </Link>
+            
           </div>
         </div>
       </div>
