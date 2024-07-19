@@ -37,7 +37,7 @@ export default function Testimonials() {
 
                                                 {/* <h2>Our Users Speack volumes us</h2> */}
                                                 <p>&quot;Works great! We have it on multiple TVs at Marshall&apos;s ports Bar and use it to promote our events and shows.Plus, it saves us money on printed posters.Loveit!&quot;</p>
-                                                <h4>-Marshall's Sports Bar,<span>Conyers,GA</span></h4>
+                                                <h4>-Marshall&apos;s Sports Bar,<span>Conyers,GA</span></h4>
 
                                             </div>
                                         </div>
