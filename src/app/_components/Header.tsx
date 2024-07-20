@@ -52,6 +52,33 @@ const Header: React.FC =() => {
       });
     }
 
+    const scrollto = (el: string) => {
+      const header = select('#header') as HTMLElement;
+      const offset = header.offsetHeight;
+      const elementPos = (select(el) as HTMLElement).offsetTop;
+      window.scrollTo({
+        top: elementPos - offset,
+        behavior: 'smooth'
+      });
+    };
+
+    const scrollLinks = select('.scrollto', true) as HTMLElement[];
+    if (scrollLinks) {
+      scrollLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          if ((select('#navbar') as HTMLElement).classList.contains('navbar-mobile')) {
+            (select('#navbar') as HTMLElement).classList.remove('navbar-mobile');
+            mobileNavToggleBtn.classList.toggle("bi-list");
+            mobileNavToggleBtn.classList.toggle("bi-x");
+          }
+          if ((link as HTMLAnchorElement).hash) {
+            e.preventDefault();
+            scrollto((link as HTMLAnchorElement).hash);
+          }
+        });
+      });
+    }
+    
     return () => {
       window.removeEventListener('load', navbarlinksActive);
       window.removeEventListener('scroll', navbarlinksActive);
