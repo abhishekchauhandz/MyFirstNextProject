@@ -40,6 +40,18 @@ const Header: React.FC =() => {
     window.addEventListener('load', navbarlinksActive);
     window.addEventListener('scroll', navbarlinksActive);
 
+    const dropdowns = select('.navbar .dropdown > a', true) as HTMLElement[];
+    if (dropdowns) {
+      dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', (e) => {
+          if ((select('#navbar') as HTMLElement).classList.contains('navbar-mobile')) {
+            e.preventDefault();
+            (dropdown.nextElementSibling as HTMLElement).classList.toggle('dropdown-active');
+          }
+        });
+      });
+    }
+
     return () => {
       window.removeEventListener('load', navbarlinksActive);
       window.removeEventListener('scroll', navbarlinksActive);
