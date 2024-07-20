@@ -531,11 +531,12 @@ span {
 --------------------------------------------------------------*/
 section {
   overflow: hidden;
+  /* margin-top: -60px; */
 }
 
 .padd-section {
   padding-bottom: 80px;
-  padding-top: 100px;
+  padding-top: 30px;
 }
 
 @media (max-width: 992px) {
@@ -796,96 +797,6 @@ section {
 
 /* Video Section
 --------------------------------*/
-#video {
-  background: url(/assets/img/video-bg.jpg) center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 400px;
-  overflow: hidden;
-}
-
-#video .overlay {
-  background: rgba(0, 0, 0, 0.85);
-  height: 100%;
-}
-
-#video .overlay .play-btn {
-  width: 94px;
-  height: 94px;
-  background: radial-gradient(#71c55d 50%, rgba(113, 197, 93, 0.15) 52%);
-  border-radius: 50%;
-  display: block;
-  margin: 153px auto 0;
-  position: relative;
-  overflow: hidden;
-}
-
-#video .overlay .play-btn::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 100;
-  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-#video .overlay .play-btn:before {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  animation-delay: 0s;
-  animation: pulsate1 2s;
-  animation-direction: forwards;
-  animation-iteration-count: infinite;
-  animation-timing-function: steps;
-  opacity: 1;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  top: -15%;
-  left: -15%;
-  background: rgba(198, 16, 0, 0);
-}
-
-#video .overlay .play-btn:hover::after {
-  border-left: 15px solid #71c55d;
-  transform: scale(20);
-}
-
-#video .overlay .play-btn:hover::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border: none;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 200;
-  animation: none;
-  border-radius: 0;
-}
-
-@keyframes pulsate1 {
-  0% {
-    transform: scale(0.6, 0.6);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1, 1);
-    opacity: 0;
-  }
-}
 
 /* Team Section
 --------------------------------*/
@@ -1058,23 +969,23 @@ section {
 }
 
 #pricing .block-pricing .pricing-table h4 {
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 }
 
-#pricing .block-pricing h2 {
+#pricing .block-pricing h4 {
   margin-bottom: 30px;
 }
 
 #pricing .block-pricing ul {
   list-style: outside none none;
-  margin: 10px auto;
-  max-width: 240px;
+  /* margin: 10px 30px; */
+  /* max-width: 240px; */
   padding: 0;
 }
 
 #pricing .block-pricing ul li {
   border-bottom: 1px solid rgba(153, 153, 153, 0.3);
-  padding: 12px 0;
+  padding: 0;
   text-align: center;
 }
 

@@ -47,6 +47,7 @@ const Login: React.FC = () => {
               <button type="submit" className="btn btn-primary btn-block">{loading ? "Logging in..." : "Login"}</button>
             </div>
           </form>
+          <hr/>
           <div className="text-center mt-3">
             <Link href="/forgot-password">
               <p className="mr-3">Forgot Password?</p>
