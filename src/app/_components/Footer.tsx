@@ -8,8 +8,8 @@ export default function Footer () {
         <div className='col-md-12 col-lg-4'>
           <div className='footer-logo'>
 
-            <a className='navbar-brand' href='#'>eStartup</a>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the.</p>
+            <a className='navbar-brand' href='#'>FlairCast</a>
+            <p>Our Innovative on-screen technology lets you surround your standard lobby or waiting room TV content with a customisable frame.</p>
 
           </div>
         </div>
@@ -29,7 +29,7 @@ export default function Footer () {
           </div>
         </div>
 
-        <div className='col-sm-6 col-md-3 col-lg-2'>
+        {/* <div className='col-sm-6 col-md-3 col-lg-2'>
           <div className='list-menu'>
 
             <h4>Abou Us</h4>
@@ -42,9 +42,9 @@ export default function Footer () {
             </ul>
 
           </div>
-        </div>
+        </div> */}
 
-        <div className='col-sm-6 col-md-3 col-lg-2'>
+        {/* <div className='col-sm-6 col-md-3 col-lg-2'>
           <div className='list-menu'>
 
             <h4>Support</h4>
@@ -57,9 +57,9 @@ export default function Footer () {
             </ul>
 
           </div>
-        </div>
+        </div> */}
 
-        <div className='col-sm-6 col-md-3 col-lg-2'>
+        {/* <div className='col-sm-6 col-md-3 col-lg-2'>
           <div className='list-menu'>
 
             <h4>Abou Us</h4>
@@ -72,17 +72,14 @@ export default function Footer () {
             </ul>
 
           </div>
-        </div>
+        </div> */}
 
       </div>
     </div>
 
     <div className='copyrights'>
       <div className='container'>
-        <p>&copy; Copyrights eStartup. All rights reserved.</p>
-        <div className='credits'>
-           <a href='https://bootstrapmade.com/'>BootstrapMade</a>
-        </div>
+        <p>&copy; Copyrights FlairCast. All rights reserved.</p>
       </div>
     </div>
 

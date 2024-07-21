@@ -29,7 +29,7 @@ const Login: React.FC = () => {
   return (
     <>
       <Link href="/">
-        <p style={{ backgroundColor: "#71c55d", color: "#fff", textDecoration: "none", fontSize: "1rem", padding: "8px" }}>Back to home</p>
+        <p style={{ backgroundColor: "#ff7c04", color: "#fff", textDecoration: "none", fontSize: "1rem", padding: "8px" }}>Back to home</p>
       </Link>
       <div className="container-fluid bg-light vh-100 d-flex align-items-center justify-content-center">
         <div className="card p-4 shadow" style={{ width: "400px" }}>

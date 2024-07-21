@@ -91,7 +91,8 @@ const Header: React.FC =() => {
     <header id='header' className='header fixed-top d-flex align-items-center'>
       <div className='container d-flex align-items-center justify-content-between'>
         <div id='logo'>
-          <h1><a href='#'><span>Flair</span>Cast</a></h1>
+          {/* <h1><a href='#'><span>Flair</span>Cast</a></h1> */}
+          <img src='assets/img/logo.png' />
         </div>
         <nav id='navbar' className='navbar'>
           <ul>
@@ -106,7 +107,7 @@ const Header: React.FC =() => {
                                 <li className="dropdown"><a href="#"><span>Welcome, {userName || 'Abhishek'}</span> <i className="bi bi-chevron-down"></i></a>
                                     <ul>
                                         <li><Link href="/dashboard">Go to dashboard</Link></li>
-                                        <li><button onClick={logout} className="btn btn-primary px-4 py-2" style={{ fontSize: "0.7rem", backgroundColor: "#71c55d", marginLeft: "30px" }}>Logout</button></li>
+                                        <li><button onClick={logout} className="btn btn-primary px-4 py-2" style={{ fontSize: "0.7rem", backgroundColor: "#ff7c04", marginLeft: "30px" }}>Logout</button></li>
                                     </ul>
                                 </li>
                             </>

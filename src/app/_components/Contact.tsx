@@ -54,7 +54,8 @@ export default function Contact() {
         <div className='section-title text-center'>
           <h2>Contact</h2>
           <p className='separator'>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+          Complete the form below and someone from sales
+          will contact you to discuss further details.
           </p>
         </div>
 
@@ -64,9 +65,9 @@ export default function Contact() {
               <div>
                 <i className='bi bi-geo-alt'></i>
                 <p>
-                  A108 Adam Street
+                  1 Meca Way
                   <br />
-                  New York, NY 535022
+                  Building F, Norccross GA 30093
                 </p>
               </div>
 
@@ -77,7 +78,7 @@ export default function Contact() {
 
               <div>
                 <i className='bi bi-phone'></i>
-                <p>+1 5589 55488 55</p>
+                <p>(678)684-4355</p>
               </div>
             </div>
 
