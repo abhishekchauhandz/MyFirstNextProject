@@ -47,7 +47,7 @@ const Screenshots = () => {
     <>
       <section id='screenshots' className='padd-section text-center'>
         <div className='container' data-aos='fade-up'>
-          <div className='section-title text-center'>
+          <div className='section-title text-center my-1'>
             <h2>Gallery</h2>
             {/* <p className='separator'>Integer cursus bibendum augue ac cursus.</p> */}
           </div>

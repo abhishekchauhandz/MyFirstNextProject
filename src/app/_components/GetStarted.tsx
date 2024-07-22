@@ -8,7 +8,7 @@ export default function GetStarted() {
                     <div className='section-title text-center'>
 
                         {/* <h2>simple systeme fordiscount </h2> */}
-                        <p className='separator'>Our Innovative on-screen technology lets you surround your standard lobby or waiting room TV content with a customisable frame. You can use that space to </p>
+                        <p className='separator'>Our Innovative on-screen technology lets you surround your standard lobby or waiting room TV content with a customisable frame.</p>
 
                     </div>
                 </div>
