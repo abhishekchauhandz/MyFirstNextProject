@@ -99,8 +99,8 @@ const Header: React.FC =() => {
             <li><a className='nav-link scrollto active' href='#hero'>Home</a></li>
             <li><a className='nav-link scrollto' href='#about-us'>About</a></li>
             <li><a className='nav-link scrollto' href='#features'>Features</a></li>
-            <li><a className='nav-link scrollto' href='#screenshots'>Screenshots</a></li>
             <li><a className='nav-link scrollto' href='#pricing'>Pricing</a></li>
+            <li><a className='nav-link scrollto' href='#faq'>FAQs</a></li>
             <li><a className='nav-link scrollto' href='#contact'>Contact</a></li>
             {user ? (
                             <>

@@ -5,14 +5,14 @@ import { collection, addDoc } from 'firebase/firestore';
 import { transporter } from '@/app/utils/mailSender.utils';
 
 export async function POST(req: Request) {
-    const { name, email, subject, message } = await req.json();
+    const { name, email, clinicName, clinicAddress} = await req.json();
 
     try {
-        const docRef = await addDoc(collection(db, 'contacts'), {
+        const docRef = await addDoc(collection(db, 'enquiries'), {
             name,
             email,
-            subject,
-            message,
+            clinicName,
+            clinicAddress,
             timestamp: new Date()
         });
 

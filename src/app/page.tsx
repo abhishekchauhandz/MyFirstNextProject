@@ -12,6 +12,7 @@ import GetStarted from './_components/GetStarted';
 import HeroSection from './_components/Hero';
 import Screenshot from './_components/Screenshot';
 import Testimonials from './_components/Testimonials';
+import Faq from './_components/Faq';
 import NewsLetter from './_components/NewsLetter';
 import Contact from './_components/Contact';
 import Footer from './_components/Footer';
@@ -34,6 +35,7 @@ export default function Home () {
       <Screenshot />
       <Testimonials />
       <Pricing />
+      <Faq />
       <NewsLetter />
       <Contact />
       <Footer />

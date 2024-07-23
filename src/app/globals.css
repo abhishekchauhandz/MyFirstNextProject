@@ -605,11 +605,10 @@ span {
 --------------------------------------------------------------*/
 section {
   overflow: hidden;
-  /* margin-top: -60px; */
 }
 
 .padd-section {
-  padding-bottom: 80px;
+  padding-bottom: 60px;
   padding-top: 30px;
 }
 
@@ -621,7 +620,12 @@ section {
 }
 
 .section-title {
-  margin-bottom: 80px;
+  margin-bottom: 50px;
+}
+
+.container .section-title h2 {
+  font-weight: 300;
+  opacity: 0.7;
 }
 
 @media (max-width: 992px) {
@@ -774,35 +778,62 @@ section {
 --------------------------------*/
 #about-us img {
   max-width: 100%;
+  height: auto;
 }
 
-#about-us .about-content {
-  padding-top: 60px;
+.column-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#about-us .about-content h2 {
-  color: #252525;
-  font-family: "roboto";
-  font-size: 39px;
-  font-weight: 100;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-  text-transform: capitalize;
+.image-container {
+  width: 100%;
+  max-width: 70%;
 }
 
-#about-us .about-content span {
-  font-weight: 700;
-  padding-right: 10px;
-  text-transform: uppercase;
+.zones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  padding-top: 20px;
 }
 
-#about-us .about-content ul li {
-  line-height: 36px;
+.zone {
+  margin-bottom: 15px;
 }
 
-#about-us .about-content ul li .fa {
-  padding-right: 20px;
+.zone-title {
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+  padding: 5px 10px 5px 10px; 
 }
+
+.zone-content p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    max-width: 100%;
+  }
+  
+  .zones {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .zone-title {
+    font-size: 16px;
+  }
+  
+  .zone-content p {
+    font-size: 14px;
+  }
+}
+
 
 /* Features Section
 --------------------------------*/
@@ -1027,12 +1058,7 @@ section {
   width: 100%;
   text-align: center;
   padding: 10px 0;
-  margin-bottom: 30px;
-}
-@media (max-width: 991px) {
-  #pricing .block-pricing {
-    margin-bottom: 30px;
-  }
+  /* margin-bottom: 50px; */
 }
 
 #pricing .block-pricing .pricing-table {
@@ -1040,6 +1066,7 @@ section {
   max-width: 100%;
   width: 100%;
 }
+
 #pricing .block-pricing .pricing-table h4 {
   padding-bottom: 10px;
 }
@@ -1047,6 +1074,7 @@ section {
 #pricing .block-pricing h4 {
   margin-bottom: 10px;
 }
+
 #pricing .block-pricing .pricing-list {
   list-style: none;
   padding: 0;
@@ -1065,27 +1093,40 @@ section {
   flex-direction: column;
   align-items: center;
 }
+
 #pricing .block-pricing .pricing-list li b {
   color: #3c4857;
   margin-bottom: 10px;
 }
-#pricing .block-pricing .pricing-list li .table_btn a {
+
+#pricing .block-pricing .pricing-list li input[type="radio"],
+#pricing .block-pricing .pricing-list li input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+#pricing .block-pricing .pricing-list li label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#pricing .block-pricing .table_btn {
+  margin-top: 20px;
+}
+
+#pricing .block-pricing .table_btn a {
   background: #0474c4;
   color: #fff;
-  margin-top: 5px;
   display: inline-block;
   padding: 10px 20px;
   border-radius: 5px;
   transition: background 0.3s;
   text-decoration: none;
+  font-weight: bold;
 }
 
-#pricing .block-pricing .pricing-list li .table_btn a:hover {
+#pricing .block-pricing .table_btn a:hover {
   background: #ff7c04;
-}
-#pricing .block-pricing .pricing-table .table_btn a .fa {
-  font-size: 13px;
-  margin-right: 5px;
 }
 
 @media (max-width: 767px) {
@@ -1098,6 +1139,71 @@ section {
   #pricing .block-pricing .pricing-list {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
+}
+
+/*--------------------------------------------------------------
+# F.A.Q
+--------------------------------------------------------------*/
+.faq {
+  padding: 60px 0;
+}
+
+.faq .faq-list {
+  padding: 0;
+  list-style: none;
+}
+
+.faq .faq-list li {
+  border-bottom: 1px solid #ececf1;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.faq .faq-list .question {
+  display: block;
+  position: relative;
+  font-family: #ef6603;
+  font-size: 1rem;
+  line-height: 24px;
+  font-weight: 400;
+  padding-left: 25px;
+  cursor: pointer;
+  color: #bd5102;
+  transition: 0.3s;
+}
+
+.faq .faq-list i {
+  font-size: 16px;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+.faq .faq-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 25px;
+}
+
+.faq .faq-list .icon-show {
+  display: none;
+}
+
+.faq .faq-list .collapsed {
+  color: black;
+}
+
+.faq .faq-list .collapsed:hover {
+  color: #ef6603;
+}
+
+.faq .faq-list .collapsed .icon-show {
+  display: inline-block;
+  transition: 0.6s;
+}
+
+.faq .faq-list .collapsed .icon-close {
+  display: none;
+  transition: 0.6s;
 }
 
 
@@ -1287,7 +1393,7 @@ section {
 }
 
 #contact .social-links {
-  padding: 20px 0;
+  padding: 5px 0;
   display: flex;
   gap: 8px;
 }
@@ -1407,60 +1513,55 @@ section {
 --------------------------------------------------------------*/
 .footer {
   background: #2a2c30;
+  color: #fff;
   padding-top: 50px;
 }
 
 .footer .footer-logo .navbar-brand {
   color: #fff;
-  display: inline-block;
-  float: none;
   font-family: "Philosopher", sans-serif;
   font-size: 24px;
   font-weight: 500;
-  height: 100%;
   letter-spacing: 0.2em;
-  padding-left: 0;
-  padding-top: 0;
 }
 
 .footer .footer-logo p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 10px;
   color: #fff;
-  font-size: 12px;
-  letter-spacing: 1px;
 }
 
-.footer .list-menu>h4 {
+.footer .list-menu h4 {
   color: #fff;
+  font-size: 16px;
   padding-bottom: 20px;
 }
 
 .footer .list-menu ul li a {
   color: #fff;
-  font-size: 12px;
-  padding-left: 5px;
+  font-size: 14px;
   text-decoration: none;
-  letter-spacing: 0;
+}
+
+.footer .list-menu ul li a:hover {
+  text-decoration: underline;
 }
 
 .footer .copyrights {
   background: #fff;
+  color: #2a2c30;
   margin-top: 50px;
+  padding: 10px 0;  /* Adjusted padding to remove extra space */
   text-align: center;
-  padding: 25px;
 }
 
-.footer .copyrights p,
-.footer .copyrights .credits {
+.footer .copyrights p {
   margin: 0;
-  padding: 0;
   font-family: "Open Sans", sans-serif;
-  font-weight: normal;
   font-size: 14px;
-  letter-spacing: 0;
 }
 
-.footer .copyrights p a,
-.footer .copyrights .credits a {
-  letter-spacing: 0;
+.footer .copyrights p a {
   color: #0474c4;
 }

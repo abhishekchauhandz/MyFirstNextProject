@@ -6,13 +6,13 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
-    message: "",
+    clinicName: "",
+    clinicAddress: "", // Combined field for clinic name and address
   });
 
   const [formStatus, setFormStatus] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -37,8 +37,8 @@ export default function Contact() {
         setFormData({
           name: "",
           email: "",
-          subject: "",
-          message: "",
+          clinicName: "",
+          clinicAddress: "",
         });
       } else {
         setFormStatus("Error");
@@ -54,8 +54,8 @@ export default function Contact() {
         <div className='section-title text-center'>
           <h2>Contact</h2>
           <p className='separator'>
-          Complete the form below and someone from sales
-          will contact you to discuss further details.
+            Complete the form below and someone from sales
+            will contact you to discuss further details.
           </p>
         </div>
 
@@ -129,36 +129,36 @@ export default function Contact() {
                   <input
                     type='text'
                     className='form-control'
-                    name='subject'
-                    value={formData.subject}
+                    name='clinicName'
+                    value={formData.clinicName}
                     onChange={handleChange}
-                    id='subject'
-                    placeholder='Subject'
+                    id='clinicName'
+                    placeholder='Clinic Name'
                     required
                   />
                 </div>
                 <div className='form-group mt-3'>
-                  <textarea
+                  <input
+                    type='text'
                     className='form-control'
-                    name='message'
-                    id='message'
-                    value={formData.message}
+                    name='clinicAddress'
+                    value={formData.clinicAddress}
                     onChange={handleChange}
-                    rows={5}
-                    placeholder='Message'
-                    required>
-                  </textarea>
+                    id='clinicAddress'
+                    placeholder='Clinic Address'
+                    required
+                  />
                 </div>
-                <div className='my-3'>
-                  
-                </div>
-                <div className='text-center'>
-                  <button type='submit'>
-                    {formStatus === "Submitting" ? "Sending Message..." : "Send Message"}
+                <div className='text-center mt-4'>
+                  <button type='submit' className='btn btn-primary'>
+                    {formStatus === "Submitting" ? "Sending Enquiry..." : "Send Enquiry"}
                     {formStatus === "Submitting" && <div className='loading'>Loading</div>}
-                  {formStatus === "Error" && <div className='error-message'>Error submitting form.</div>}
-                  {formStatus === "Submitted" && <div className='sent-message'>Your message has been sent. Thank you!</div>}
+                    {formStatus === "Error" && <div className='error-message'>Error submitting form.</div>}
+                    {formStatus === "Submitted" && <div className='sent-message'>Your message has been sent. Thank you!</div>}
                   </button>
+                  <a href='/brochure.pdf' download className='btn btn-secondary ms-2'>
+                    Download Brochure
+                  </a>
                 </div>
               </form>
             </div>
