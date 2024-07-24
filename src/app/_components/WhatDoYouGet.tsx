@@ -2,7 +2,7 @@
 export default function WhatDoYouGet() {
     return (
         <>
-            <section id='whatDoYouGet' className='padd-section text-center'>
+            <section id='features' className='padd-section text-center'>
 
                 <div className='container' data-aos='fade-up'>
                     <div className='section-title text-center'>
