@@ -144,12 +144,12 @@ export default function Faq() {
           </li>
 
           <li>
-            <div data-bs-toggle="collapse" className="collapsed question" data-bs-target="#faq10">
+            <div data-bs-toggle="collapse" className="collapsed question" data-bs-target="#faq11">
               How long does it take to install? 
               <i className="bi bi-chevron-down icon-show"></i>
               <i className="bi bi-chevron-up icon-close"></i>
             </div>
-            <div id="faq10" className="collapse" data-bs-parent=".faq-list">
+            <div id="faq11" className="collapse" data-bs-parent=".faq-list">
               <p>
               Unless there are special circumstances, the typical installation lasts no more than 15-20 minutes. The more information that we have about the type of TV or network requirements, the quicker it will take. If a new TV is involved that requires mounting the time could take a little longer.
               </p>
@@ -157,12 +157,12 @@ export default function Faq() {
           </li>
 
           <li>
-            <div data-bs-toggle="collapse" className="collapsed question" data-bs-target="#faq10">
+            <div data-bs-toggle="collapse" className="collapsed question" data-bs-target="#faq12">
               What happens if there is a problem with programming?
               <i className="bi bi-chevron-down icon-show"></i>
               <i className="bi bi-chevron-up icon-close"></i>
             </div>
-            <div id="faq10" className="collapse" data-bs-parent=".faq-list">
+            <div id="faq12" className="collapse" data-bs-parent=".faq-list">
               <p>
               We generally know when there is a problem with programming and can sometimes act before anyone notices. That being said, we are always available during working hours to handle a call informing us that there is a problem. Once we are made aware of the problem we will either resolve it remotely or dispatch a technician to physically inspect the unit.
               </p>
@@ -170,12 +170,12 @@ export default function Faq() {
           </li>
 
           <li>
-            <div data-bs-toggle="collapse" className="collapsed question" data-bs-target="#faq10">
+            <div data-bs-toggle="collapse" className="collapsed question" data-bs-target="#faq13">
               Can I add more locations as we grow?
               <i className="bi bi-chevron-down icon-show"></i>
               <i className="bi bi-chevron-up icon-close"></i>
             </div>
-            <div id="faq10" className="collapse" data-bs-parent=".faq-list">
+            <div id="faq13" className="collapse" data-bs-parent=".faq-list">
               <p>
               Yes. You can absolutely add another location or even add service to another TV in the same office building. Each location should meet the same requirements including visibility to a captive audience.
               </p>
@@ -183,12 +183,12 @@ export default function Faq() {
           </li>
 
           <li>
-            <div data-bs-toggle="collapse" className="collapsed question" data-bs-target="#faq10">
+            <div data-bs-toggle="collapse" className="collapsed question" data-bs-target="#faq14">
               What am I responsible for?
               <i className="bi bi-chevron-down icon-show"></i>
               <i className="bi bi-chevron-up icon-close"></i>
             </div>
-            <div id="faq10" className="collapse" data-bs-parent=".faq-list">
+            <div id="faq14" className="collapse" data-bs-parent=".faq-list">
               <p>
               We simply ask that you protect the equipment from harm or any other potential risk that would prevent it from operating properly. We also ask that the system run continuously during office hours unless there is a power outage or other circumstance which beyond the control of your office.
               </p>
