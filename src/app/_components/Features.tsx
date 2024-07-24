@@ -1,84 +1,52 @@
 
-export default function Features() {
-    return (
-        <>
-            <section id='features' className='padd-section text-center'>
 
-                <div className='container' data-aos='fade-up'>
-                    <div className='section-title text-center'>
-                        <h2>Amazing Features.</h2>
-                        {/* <p className='separator'>Integer cursus bibendum augue ac cursus .</p> */}
-                    </div>
+const Features = () => {
 
-                    <div className='row' data-aos='fade-up' data-aos-delay='100'>
+  return (
+    <section id="features" className="features section-bg">
+      <div className="container">
 
-                        <div className='col-md-6 col-lg-3'>
-                            <div className='feature-block'>
-                                <img src='assets/img/svg/paint-palette.svg' alt='img' />
-                                <h4>creative your own private TV channel</h4>
-                                {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> */}
-                            </div>
-                        </div>
+        <div className="section-title">
+          <h2>Features</h2>
+          <p>Discover our features that make your life easier</p>
+        </div>
 
-                        <div className='col-md-6 col-lg-3'>
-                            <div className='feature-block'>
-                                <img src='assets/img/svg/vector.svg' alt='img' />
-                                <h4>no interruption to your your TV signals</h4>
-                                <p>- any channel and provider works</p>
-                            </div>
-                        </div>
+        <div className="row">
+          <div className="col-lg-4 col-md-6 icon-box">
+            <div className="icon"><i className="bi bi-briefcase"></i></div>
+            <h4 className="title"><a href="">Use of Customer Portal with Master Login</a></h4>
+            <p className="description">Access your account with a master login for centralized management.</p>
+          </div>
+          <div className="col-lg-4 col-md-6 icon-box">
+            <div className="icon"><i className="bi bi-card-checklist"></i></div>
+            <h4 className="title"><a href="">Customer Portal Access for Site Managers</a></h4>
+            <p className="description">Allow site managers to access the customer portal for better management.</p>
+          </div>
+          <div className="col-lg-4 col-md-6 icon-box">
+            <div className="icon"><i className="bi bi-bar-chart"></i></div>
+            <h4 className="title"><a href="">Add your logo</a></h4>
+            <p className="description">Customize the interface by adding your company logo.</p>
+          </div>
+          <div className="col-lg-4 col-md-6 icon-box">
+            <div className="icon"><i className="bi bi-binoculars"></i></div>
+            <h4 className="title"><a href="">Text Messaging Crawl</a></h4>
+            <p className="description">Engage your audience with a scrolling text message feature.</p>
+          </div>
+          <div className="col-lg-4 col-md-6 icon-box">
+            <div className="icon"><i className="bi bi-brightness-high"></i></div>
+            <h4 className="title"><a href="">Banner Ads</a></h4>
+            <p className="description">Monetize your platform with integrated banner ads.</p>
+          </div>
+          <div className="col-lg-4 col-md-6 icon-box">
+            <div className="icon"><i className="bi bi-calendar4-week"></i></div>
+            <h4 className="title"><a href="">Add your videos as needed</a></h4>
+            <p className="description">Enhance your content by adding your own videos.</p>
+          </div>
+        </div>
 
-                        <div className='col-md-6 col-lg-3'>
-                            <div className='feature-block'>
-                                <img src='assets/img/svg/design-tool.svg' alt='img' />
-                                <h4>Make your waiting area more interesting and information-worthy</h4>
-                                {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> */}
-                            </div>
-                        </div>
+      </div>
+    </section>
+  );
+};
 
-                        <div className='col-md-6 col-lg-3'>
-                            <div className='feature-block'>
-                                <img src='assets/img/svg/asteroid.svg' alt='img' />
-                                <h4>Easy Set-up</h4>
-                                {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> */}
-                            </div>
-                        </div>
-
-                        <div className='col-md-6 col-lg-3'>
-                            <div className='feature-block'>
-                                <img src='assets/img/svg/asteroid.svg' alt='img' />
-                                <h4>No software or restrictive templates required</h4>
-                                {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> */}
-                            </div>
-                        </div>
-
-                        <div className='col-md-6 col-lg-3'>
-                            <div className='feature-block'>
-                                <img src='assets/img/svg/cloud-computing.svg' alt='img' />
-                                <h4>Custom-deliver the message YOU want</h4>
-                                {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> */}
-                            </div>
-                        </div>
-
-                        <div className='col-md-6 col-lg-3'>
-                            <div className='feature-block'>
-                                <img src='assets/img/svg/pixel.svg' alt='img' />
-                                <h4>Make Any Changes to your slides and Messages</h4>
-                                {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> */}
-                            </div>
-                        </div>
-
-                        <div className='col-md-6 col-lg-3'>
-                            <div className='feature-block'>
-                                <img src='assets/img/svg/code.svg' alt='img' />
-                                <h4>Proven to Increase sales by more than 30%</h4>
-                                {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> */}
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-        </>
-    )
-}
+export default Features;

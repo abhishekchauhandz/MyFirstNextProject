@@ -839,6 +839,154 @@ section {
   }
 }
 
+/* Features.css */
+
+.features {
+  padding-bottom: 40px;
+}
+
+.features .icon-box {
+  margin-bottom: 40px;
+}
+
+.features .icon {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  transition: 0.5s;
+  border: 2px solid #85b0be;
+}
+
+.features .icon i {
+  color: #649aac;
+  font-size: 24px;
+  line-height: 0;
+}
+
+.features .title {
+  margin-left: 90px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.features .title a {
+  color: #052c3f;
+  transition: 0.3s;
+}
+
+.features .description {
+  margin-left: 90px;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+.features .icon-box:hover .icon {
+  background: #85b0be;
+}
+
+.features .icon-box:hover .icon i {
+  color: #fff;
+}
+
+.features .icon-box:hover .title a {
+  color: #85b0be;
+}
+
+/* HowFlaircastWorks.css */
+
+
+#how-flaircast-works {
+  padding: 60px 0;
+}
+
+.client-dashboard-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.client-dashboard-image {
+  width: 70%; /* Increased width */
+  max-width: 900px;
+  height: auto;
+}
+
+.content {
+  text-align: left;
+  padding: 0 20px;
+}
+
+.content h2 {
+  color: #252525;
+  font-family: "roboto";
+  font-size: 39px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.article {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.article-image {
+  flex: 1;
+  text-align: center;
+  margin: 20px;
+  width: 500px;
+}
+
+.another-image {
+  width: 500px;
+  height: 400px;
+}
+
+.article-text {
+  flex: 2;
+  margin: 20px;
+}
+
+.article-text p {
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .client-dashboard-image {
+    width: 90%;
+  }
+
+  .article {
+    flex-direction: column;
+  }
+
+  .another-image {
+    width: 90%;
+  }
+
+  .content h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content h2 {
+    font-size: 24px;
+  }
+
+  .another-image {
+    width: 100%;
+  }
+}
+
+
+
 
 /* Features Section
 --------------------------------*/
