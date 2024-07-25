@@ -621,6 +621,7 @@ section {
 
 .section-title {
   margin-bottom: 50px;
+  text-align: center;
 }
 
 .container .section-title h2 {
@@ -935,7 +936,7 @@ section {
 }
 
 .article-image {
-  flex: 1;
+  flex: 2;
   text-align: center;
   margin: 20px;
 }

@@ -24,15 +24,19 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      setUser(user);
-      if (user) {
-        const userDoc = await getDoc(doc(db, 'users', user.uid));
-        if (userDoc.exists()) {
-          const userData = userDoc.data();
-          setUserName(userData.firstName);
+      try {
+        setUser(user);
+        if (user) {
+          const userDoc = await getDoc(doc(db, 'users', user.uid));
+          if (userDoc.exists()) {
+            const userData = userDoc.data();
+            setUserName(userData.firstName);
+          }
+        } else {
+          setUserName(null);
         }
-      } else {
-        setUserName(null);
+      } catch (error) {
+        console.log(error)
       }
       setLoading(false);
     });

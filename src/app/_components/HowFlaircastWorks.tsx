@@ -7,13 +7,13 @@ const HowFlaircastWorks = () => {
         <div className='client-dashboard-container'>
           <img src='assets/img/Client-Dashboard.png' alt='Client Dashboard' className='client-dashboard-image' data-aos='zoom-in' data-aos-delay='100' />
         </div>
-        <div className='content'>
+        <div className='section-title'>
           <h2>HOW FLAIRCAST WORKS</h2>
           <div className='article'>
             <div className='article-image'>
               <img src='assets/img/AnotherImage.png' alt='Another Image' className='another-image' data-aos='zoom-in' data-aos-delay='100' />
             </div>
-            <div className='article-text'>
+            <div className='article-text content'>
               <p>All you need is a HD flat panel TV that&apos;s at least 32 inches with Internet connectivity of 1.5MB or more per screen. From there, we&apos;ll help you get the messages of your choosing in front of everyone who&apos;s sitting in your waiting room, office or lobby watching your TV.</p>
               <p>We&apos;ll give you a pre-programmed device that fits behind your TV and connects directly to your waiting area&apos;s television set. After the hardware&apos;s attached to your TV, you connect it to your wireless network and begin streaming to your TV.</p>
               <p>You can log into your web portal and change your messaging anytime from anywhere.</p>
