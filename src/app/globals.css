@@ -912,7 +912,7 @@ section {
 .client-dashboard-image {
   width: 70%; /* Increased width */
   max-width: 900px;
-  height: auto;
+  height: 500px;
 }
 
 .content {
@@ -959,6 +959,7 @@ section {
 @media (max-width: 768px) {
   .client-dashboard-image {
     width: 90%;
+    height: auto;
   }
 
   .article {
@@ -978,6 +979,12 @@ section {
 @media (max-width: 480px) {
   .content h2 {
     font-size: 24px;
+  }
+
+  .client-dashboard-image {
+    height: 300px;
+    padding: 0;
+    margin: 0;
   }
 
   .another-image {
@@ -1218,24 +1225,14 @@ section {
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 4px 0 rgba(0, 0, 0, 0.19);
   display: inline-block;
   position: relative;
-  width: 100%;
   text-align: center;
   padding: 10px 0;
-  /* margin-bottom: 50px; */
 }
 
 #pricing .block-pricing .pricing-table {
   padding: 10px 10px;
   max-width: 100%;
   width: 100%;
-}
-
-#pricing .block-pricing .pricing-table h4 {
-  padding-bottom: 10px;
-}
-
-#pricing .block-pricing h4 {
-  margin-bottom: 10px;
 }
 
 #pricing .block-pricing .pricing-list {
@@ -1262,17 +1259,6 @@ section {
   margin-bottom: 10px;
 }
 
-#pricing .block-pricing .pricing-list li input[type="radio"],
-#pricing .block-pricing .pricing-list li input[type="checkbox"] {
-  margin-right: 10px;
-}
-
-#pricing .block-pricing .pricing-list li label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 #pricing .block-pricing .table_btn {
   margin-top: 20px;
 }
@@ -1292,17 +1278,39 @@ section {
   background: #ff7c04;
 }
 
+#pricing .block-pricing .units-input {
+  /* margin-top: 20px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+#pricing .block-pricing .units-input label {
+  font-weight: bold;
+}
+
+#pricing .block-pricing .units-input input {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
 @media (max-width: 767px) {
   #pricing .block-pricing .pricing-list {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   #pricing .block-pricing .pricing-list {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
+
+
 
 /*--------------------------------------------------------------
 # F.A.Q

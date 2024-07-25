@@ -1,21 +1,22 @@
-import { SetStateAction, useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 
 export default function Pricing() {
-    const [selectedUpfrontCost, setSelectedUpfrontCost] = useState('');
-    const [onsiteSupport, setOnsiteSupport] = useState(false);
-
-    const handleUpfrontCostChange = (e: { target: { value: SetStateAction<string>; }; }) => {
-        setSelectedUpfrontCost(e.target.value);
-    };
-
-    const handleOnsiteSupportChange = (e: { target: { checked: boolean | ((prevState: boolean) => boolean); }; }) => {
-        setOnsiteSupport(e.target.checked);
-    };
+    const [units, setUnits] = useState<number>(1);
 
     const handleBuyNow = () => {
         // Handle the buy now logic here
-        console.log('Buy Now Clicked');
+        console.log('Buy Now Clicked with units:', units);
+        setUnits(1)
     };
+
+    const handleUnitsChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
+        const numericValue = value ? Number(value) : 0;
+        if (!isNaN(numericValue)) {
+            setUnits(numericValue);
+        }
+    };
+
 
     return (
         <section id='pricing' className='padd-section text-center'>
@@ -30,32 +31,8 @@ export default function Pricing() {
                                 <h4>Upfront Costs</h4>
                                 <ul className='pricing-list'>
                                     <li>
-                                        <input
-                                            type='radio'
-                                            id='upfront1'
-                                            name='upfrontCost'
-                                            value='$199/kit/location'
-                                            onChange={handleUpfrontCostChange}
-                                            checked={selectedUpfrontCost === '$199/kit/location'}
-                                        />
-                                        <label htmlFor='upfront1'>
-                                            <b>$199/kit/location</b>
-                                            <div>Startup Kit + Phone Install Support + 1st Month Free Service</div>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input
-                                            type='radio'
-                                            id='upfront2'
-                                            name='upfrontCost'
-                                            value='$100/kit/location'
-                                            onChange={handleUpfrontCostChange}
-                                            checked={selectedUpfrontCost === '$100/kit/location'}
-                                        />
-                                        <label htmlFor='upfront2'>
-                                            <b>$100/kit/location</b>
-                                            <div>Site Visit and Installation Service (Atlanta Only)</div>
-                                        </label>
+                                        <b>$199/kit/location</b>
+                                        <div>Startup Kit + Phone Install Support + 1st Month Free Service</div>
                                     </li>
                                 </ul>
                             </div>
@@ -70,20 +47,18 @@ export default function Pricing() {
                                         <b>FREE</b>
                                         <div>Lifetime Warranty on Hardware and Unlimited Phone Support</div>
                                     </li>
-                                    <li>
-                                        <input
-                                            type='checkbox'
-                                            id='monthly3'
-                                            name='twenty'
-                                            onChange={handleOnsiteSupportChange}
-                                            checked={onsiteSupport}
-                                        />
-                                        <label htmlFor='monthly3'>
-                                            <b>$20/month/TV <i>(optional)</i></b>
-                                            <div>Onsite Support and Service and Portal Management</div>
-                                        </label>
-                                    </li>
                                 </ul>
+                            </div>
+                            <div className='units-input'>
+                                <label htmlFor='units'>No of Units:</label>
+                                <input
+                                    type='number'
+                                    id='units'
+                                    name='units'
+                                    min='1'
+                                    value={units}
+                                    onChange={handleUnitsChange}
+                                />
                             </div>
                             <div className='table_btn'>
                                 <a href='#' className='btn' onClick={handleBuyNow}>
