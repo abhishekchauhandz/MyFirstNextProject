@@ -899,7 +899,6 @@ section {
 
 /* HowFlaircastWorks.css */
 
-
 #how-flaircast-works {
   padding: 60px 0;
 }
@@ -939,12 +938,11 @@ section {
   flex: 1;
   text-align: center;
   margin: 20px;
-  width: 500px;
 }
 
 .another-image {
-  width: 500px;
-  height: 400px;
+  width: 100%;
+  height: auto;
 }
 
 .article-text {
@@ -964,6 +962,7 @@ section {
 
   .article {
     flex-direction: column;
+    align-items: center; /* Center align the items */
   }
 
   .another-image {
@@ -981,9 +980,19 @@ section {
   }
 
   .another-image {
-    width: 100%;
+    width: 100%; /* Ensure the image takes full width */
+    max-width: 100%; /* Ensure the image does not exceed 100% width */
+  }
+
+  .article-text {
+    margin: 0px 0px; /* Adjust margin for better spacing */
+  }
+
+  .article {
+    padding: 0 0px; /* Add padding to avoid overflow */
   }
 }
+
 
 
 
