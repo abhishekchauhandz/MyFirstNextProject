@@ -1,0 +1,57 @@
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 70px; /* Adjusted width */
+    transition: width 0.2s;
+    background-color: #f8f9fa;
+    border-right: 1px solid #dee2e6;
+    z-index: 1000; /* Ensure the sidebar is above other elements */
+  }
+  
+  .sidebar:hover {
+    width: 200px; /* Expanded width on hover */
+  }
+  
+  .sidebar .list-group-item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px 15px;
+  }
+  
+  .sidebar .list-group-item:hover {
+    white-space: normal;
+  }
+  
+  /* Content */
+  .card {
+    margin-bottom: 20px;
+  }
+  .main-content {
+    transition: margin-left 0.2s;
+    margin-left: 100px; /* Default margin */
+    margin-top: 100px; /* Adjust according to the navbar's height */
+    padding-left: 80px;
+    background-color: #ffffff;
+  }
+  
+  .main-content.shifted {
+    margin-left: 200px; /* Margin when sidebar is expanded */
+  }
+  
+  /* Navbar */
+  .navbar-custom {
+    transition: margin-left 0.2s;
+    margin-left: 60px; /* Default margin */
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  .navbar-custom.shifted {
+    margin-left: 90px; /* Margin when sidebar is expanded */
+    width: 100vw;
+  }

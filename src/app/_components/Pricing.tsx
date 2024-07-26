@@ -59,6 +59,7 @@ export default function Pricing() {
                                     value={units}
                                     onChange={handleUnitsChange}
                                 />
+                                
                             </div>
                             <div className='table_btn'>
                                 <a href='#' className='btn' onClick={handleBuyNow}>

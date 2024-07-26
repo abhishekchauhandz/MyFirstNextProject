@@ -7,7 +7,8 @@ export default function Contact() {
     name: "",
     email: "",
     clinicName: "",
-    clinicAddress: "", // Combined field for clinic name and address
+    clinicAddress: "",
+    message: "" // Combined field for clinic name and address
   });
 
   const [formStatus, setFormStatus] = useState("");
@@ -39,6 +40,7 @@ export default function Contact() {
           email: "",
           clinicName: "",
           clinicAddress: "",
+          message: "",
         });
       } else {
         setFormStatus("Error");
@@ -149,9 +151,21 @@ export default function Contact() {
                     required
                   />
                 </div>
+                
+                <div className='form-group mt-3'>
+                  <input
+                    type='text'
+                    className='form-control'
+                    name='message'
+                    value={formData.message}
+                    onChange={handleChange}
+                    id='message'
+                    placeholder='Message'
+                  />
+                </div>
                 <div className='text-center mt-4'>
                   <button type='submit' className='btn btn-primary'>
-                    {formStatus === "Submitting" ? "Sending Enquiry..." : "Send Enquiry"}
+                    {formStatus === "Submitting" ? "Please wait..." : "Send Enquiry"}
                     {formStatus === "Submitting" && <div className='loading'>Loading</div>}
                     {formStatus === "Error" && <div className='error-message'>Error submitting form.</div>}
                     {formStatus === "Submitted" && <div className='sent-message'>Your message has been sent. Thank you!</div>}

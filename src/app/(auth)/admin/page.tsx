@@ -1,4 +1,3 @@
-// auth/login.tsx
 'use client'
 
 import { useState } from 'react';
@@ -8,7 +7,7 @@ import { auth } from '@/app/firebaseConfig';
 import Link from 'next/link';
 
 const Login: React.FC = () => {
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
@@ -18,7 +17,7 @@ const Login: React.FC = () => {
     setLoading(true);
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      router.push('/');
+      router.push('/dashboard');
     } catch (error) {
       console.error("Error logging in..", error);
       alert('Login failed');
@@ -37,14 +36,14 @@ const Login: React.FC = () => {
           <form onSubmit={handleSubmit}>
             <div className="form-group mb-3">
               <label htmlFor="inputEmail">Email address</label>
-              <input type="email" className="form-control mt-2" id="inputEmail" placeholder="Enter email" value={email} onChange={e => { setEmail(e.target.value) }} />
+              <input type="email" className="form-control mt-2" id="inputEmail" placeholder="Enter email" value={email} onChange={e => setEmail(e.target.value)} />
             </div>
             <div className="form-group mb-3">
               <label htmlFor="inputPassword">Password</label>
-              <input type="password" className="form-control mt-2" id="inputPassword" placeholder="Password" value={password} onChange={e => { setPassword(e.target.value) }} />
+              <input type="password" className="form-control mt-2" id="inputPassword" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
             </div>
             <div className="form-group d-flex justify-content-center">
-              <button type="submit" className="btn btn-primary btn-block">{loading ? "Logging in..." : "Login"}</button>
+              <button type="submit" className="btn btn-primary btn-block">{loading ? "Please wait..." : "Login"}</button>
             </div>
           </form>
           <hr/>
@@ -52,7 +51,6 @@ const Login: React.FC = () => {
             <Link href="/forgot-password">
               <p className="mr-3">Forgot Password?</p>
             </Link>
-            
           </div>
         </div>
       </div>

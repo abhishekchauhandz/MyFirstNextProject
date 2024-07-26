@@ -6,10 +6,12 @@ import { onAuthStateChanged, signOut, User } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 import { auth, db } from '@/app/firebaseConfig';
 import { useRouter } from 'next/navigation';
+import { Col, Container, Row, Spinner } from 'react-bootstrap';
 
 interface AuthContextProps {
   user: User | null;
   userName: string | null;
+  loading: boolean;
   logout: () => void;
 }
 
@@ -27,7 +29,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       try {
         setUser(user);
         if (user) {
-          const userDoc = await getDoc(doc(db, 'users', user.uid));
+          const userDoc = await getDoc(doc(db, 'admin', user.uid));
           if (userDoc.exists()) {
             const userData = userDoc.data();
             setUserName(userData.firstName);
@@ -48,11 +50,27 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     await signOut(auth);
     setUser(null);
     setUserName(null);
-    router.push("/")
+    router.push("/login");
   };
 
+  if (loading) {
+    return (
+      <>
+        
+        
+          
+          <div className="d-flex justify-content-center align-items-center vh-100">
+            <Spinner animation="border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          </div>
+        
+      </>
+    );
+  }
+
   return (
-    <AuthContext.Provider value={{ user, userName, logout }}>
+    <AuthContext.Provider value={{ user, userName, loading, logout }}>
       {!loading && children}
     </AuthContext.Provider>
   );
